@@ -10,7 +10,9 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const core = __importStar(require("@actions/core"));
 const run = async () => {
     const creature = core.getInput('amazing-creature');
-    core.debug(`👋 Hello! You are an amazing ${creature}! 🙌`);
+    const message = `👋 Hello! You are an amazing ${creature}! 🙌`;
+    core.debug(message);
+    core.setOutput('amazing-message', message);
 };
 run();
 exports.default = run;
