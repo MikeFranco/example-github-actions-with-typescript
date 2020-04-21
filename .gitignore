@@ -6,7 +6,7 @@ logs
 npm-deb.log*
 
 #dependency directories
-node_nodules/
+node_modules/
 
 # Typescript v1 declaration files
 typings/
