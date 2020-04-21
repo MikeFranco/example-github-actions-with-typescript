@@ -3,7 +3,7 @@ description: 'Says thanks when a contributor opens an issue'
 author: 'MikeFranco'
 runs:
   using: 'node12'
-  main: './thanks.js'
+  main: './../thanks.js'
 inputs:
   thanks-message:
     description: Say thanks
