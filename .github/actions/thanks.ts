@@ -30,7 +30,7 @@ const run = async (): Promise<void> => {
     console.log(`Replied with thabks message: ${issueCommentResponse.data.url}`);
     console.log({ payload: github.context.payload });
     console.log('********************************************');
-    console.log({ user: github.context.payload.issue.user });
+    if (github.context.payload.issue) console.log({ user: github.context.payload.issue.user });
     // Add a reaction
     // https://octokit.github.io/rest.js/#octokit-routes-reactions-create-for-issue
     const issueReactionResponse = await octokit.reactions.createForIssue({
