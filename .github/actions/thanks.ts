@@ -22,15 +22,14 @@ const run = async (): Promise<void> => {
     //https://octokit.github.io/rest.js/#octokit-routes-issues-create-comment
     const senderName = github.context.payload.sender ? github.context.payload.sender.login : '';
     //const thanksMessage = core.getInput('thanks-message');
-    const thanksMessage = `Thanks ${senderName} for opening an issue ❤️!`;
+    const thanksMessage = `Thanks${senderName ? ` @${senderName}` : ''} for opening an issue ❤️!`;
     const issueCommentResponse = await octokit.issues.createComment({
       owner,
       repo,
       issue_number: issue.number,
       body: thanksMessage,
     });
-    console.log(`Replied with thabks message: ${issueCommentResponse.data.url}`);
-    console.log({ payload: github.context.payload });
+    console.log(`Replied with thanks message: ${issueCommentResponse.data.url}`);
     // Add a reaction
     // https://octokit.github.io/rest.js/#octokit-routes-reactions-create-for-issue
     const issueReactionResponse = await octokit.reactions.createForIssue({
