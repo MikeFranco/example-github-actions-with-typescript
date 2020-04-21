@@ -20,7 +20,9 @@ const run = async (): Promise<void> => {
 
     //Reply with thanks message
     //https://octokit.github.io/rest.js/#octokit-routes-issues-create-comment
-    const thanksMessage = core.getInput('thanks-message');
+    const senderName = github.context.payload.sender ? github.context.payload.sender.login : '';
+    //const thanksMessage = core.getInput('thanks-message');
+    const thanksMessage = `Thanks ${senderName} for opening an issue ❤️!`;
     const issueCommentResponse = await octokit.issues.createComment({
       owner,
       repo,
@@ -29,8 +31,6 @@ const run = async (): Promise<void> => {
     });
     console.log(`Replied with thabks message: ${issueCommentResponse.data.url}`);
     console.log({ payload: github.context.payload });
-    console.log('********************************************');
-    if (github.context.payload.issue) console.log({ user: github.context.payload.issue.user });
     // Add a reaction
     // https://octokit.github.io/rest.js/#octokit-routes-reactions-create-for-issue
     const issueReactionResponse = await octokit.reactions.createForIssue({
