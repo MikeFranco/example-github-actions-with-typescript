@@ -1,4 +1,5 @@
 import * as core from '@actions/core';
+import * as github from '@actions/github';
 
 const run = async (): Promise<void> => {
   try {
@@ -7,9 +8,11 @@ const run = async (): Promise<void> => {
       core.setFailed('Sorry, mosquitos are not amazing 🚫🦟');
       return;
     }
-    const message = `👋 Hello! You are an amazing ${creature}! 🙌`;
+    const pusherName = github.context.payload.pusher.name;
+    const message = `👋 Hello ${pusherName}! You are an amazing ${creature}! 🙌`;
     core.debug(message);
     core.setOutput('amazing-message', message);
+    console.log({ payload: github.context.payload });
   } catch (error) {
     core.setFailed(`Debug-action failure: ${error}`);
   }
