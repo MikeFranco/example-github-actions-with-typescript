@@ -43,3 +43,11 @@ describe('debug action output', () => {
         expect(setOutputMock).toHaveBeenCalledWith('amazing-message', '👋 Hello! You are an amazing person! 🙌');
     });
 });
+it('does not output debug messages for non-amazing creatures', async () => {
+    process.env['INPUT_AMAZING-CREATURE'] = 'mosquito';
+    const debugMock = jest.spyOn(core, 'debug');
+    const setFailedMock = jest.spyOn(core, 'setFailed');
+    await debug_1.default();
+    expect(debugMock).toHaveBeenCalledTimes(0);
+    expect(setFailedMock).toHaveBeenCalledWith('Sorry, mosquitos are not amazing 🚫🦟');
+});
