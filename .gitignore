@@ -1,0 +1,18 @@
+#Ignore any generated Typescript -> Javascript files
+.github/actioons/**/*.Javascript
+#logs
+logs
+*.log
+npm-deb.log*
+
+#dependency directories
+node_nodules/
+
+# Typescript v1 declaration files
+typings/
+
+# Optional npm cache directory
+.npm
+
+# Optional eslint cache
+.eslintcache
