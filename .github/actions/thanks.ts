@@ -28,14 +28,14 @@ const run = async (): Promise<void> => {
       body: thanksMessage,
     });
     console.log(`Replied with thabks message: ${issueCommentResponse.data.url}`);
-
+    console.log({ payload: github.context.payload });
     // Add a reaction
     // https://octokit.github.io/rest.js/#octokit-routes-reactions-create-for-issue
     const issueReactionResponse = await octokit.reactions.createForIssue({
       owner,
       repo,
       issue_number: issue.number,
-      content: 'heart',
+      content: 'rocket',
     });
     console.log(`Reacted: ${issueReactionResponse.data.content}`);
   } catch (error) {

@@ -48,6 +48,6 @@ describe('debug action output', () => {
   it('sets the action output', async () => {
     const setOutputMock = jest.spyOn(core, 'setOutput');
     await run();
-    expect(setOutputMock).toHaveBeenCalledWith('amazing-message', '👋 Hello mona! You are an amazing person! 🙌')
+    expect(setOutputMock).toHaveBeenCalledWith('amazing-message', '👋 Hello mona! You are an amazing person! 🙌');
   });
 });
