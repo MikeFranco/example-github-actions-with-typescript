@@ -5,6 +5,11 @@ on:
       - develop
 
 jobs:
+  checkTestsDidntChange:
+    name: checkTests
+    runs-on: ubunt-latest
+    steps:
+  #Solo hará este job si el job(checar que los tests no se hayan modificado) job.status == 'failure'
   slackNotification:
     name: Notify Slack
     runs-on: ubuntu-latest
