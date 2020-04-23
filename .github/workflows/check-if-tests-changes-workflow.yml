@@ -15,8 +15,10 @@ jobs:
         with:
           fetch-depth: 1
       - run: echo Este chato cambio los tests
-      - run: git status
-      - run: git log --graph
+      - run: git reset --hard HEAD^ --force
+      - run: git add -A
+      - run: git commit -m "Se cambiaron los tests, regresando al commit anterior"
+      - run: git push origin master
   slackNotification:
     name: Notify Slack
     runs-on: ubuntu-latest
