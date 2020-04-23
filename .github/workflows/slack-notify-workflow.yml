@@ -1,0 +1,16 @@
+on: [push]
+  branches: master
+name: Notify Slack Demo
+
+jobs:
+  slackNotification:
+    name: Notify Slack
+    runs-on: ubuntu-latest
+    uses: drilonrecica/action-slack-notify@0.0.3
+    env:
+      SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK}}
+      SLACK_CHANNEL: productdevelopment
+      SLACK_COLOR: '#000066'
+      SLACK_MESSAGE: 'Prueba GitHubAction :rocket:'
+      SLACK_USERNAME: Mike's bot
+      SLACK_TITLE: Post Title
