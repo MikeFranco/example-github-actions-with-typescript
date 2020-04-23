@@ -2,7 +2,7 @@ name: Notify Slack Demo
 on:
   push:
     branches:
-      - master
+      - develop
 
 jobs:
   slackNotification:
@@ -16,7 +16,7 @@ jobs:
         SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
         SLACK_CHANNEL: general
         SLACK_COLOR: '#000066'
-        SLACK_MESSAGE: 'Prueba GitHubAction :robot_face:. Esta cosa está bien chida :smile:'
+        SLACK_MESSAGE: 'Te andamos checando :eyes:, no borres los tests :inexpresive:'
         SLACK_USERNAME: Mike's bot
         SLACK_TITLE: Post Title
         SLACK_ICON: https://avatars3.githubusercontent.com/u/39423201?s=48&v=4
