@@ -14,7 +14,7 @@ jobs:
       uses: drilonrecica/action-slack-notify@0.0.3
       env:
         SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
-        SLACK_CHANNEL: Mike Franco
+        SLACK_CHANNEL: general
         SLACK_COLOR: '#000066'
         SLACK_MESSAGE: 'Prueba GitHubAction :robot_face:. Esta cosa está bien chida :smile:'
         SLACK_USERNAME: Mike's bot
