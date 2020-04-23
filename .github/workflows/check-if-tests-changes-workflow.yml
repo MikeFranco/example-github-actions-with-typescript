@@ -4,11 +4,11 @@ on:
     branches:
       - master
     paths:
-      - '__tests__/*'
+      - '**/__tests__/**'
 
 jobs:
   checkTests:
-    name: checkTests
+    name: check Tests
     runs-on: ubuntu-latest
     steps:
       - run: echo Este chato cambio los tests

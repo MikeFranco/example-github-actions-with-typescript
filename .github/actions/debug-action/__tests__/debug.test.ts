@@ -17,7 +17,6 @@ beforeEach(() => {
       name: 'mona',
     },
   } as WebhookPayload;
-  console.log('Cambié los tests');
 });
 
 afterEach(() => {
