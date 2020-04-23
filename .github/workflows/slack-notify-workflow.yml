@@ -5,11 +5,6 @@ on:
       - develop
 
 jobs:
-  checkTestsDidntChange:
-    name: checkTests
-    runs-on: ubunt-latest
-    steps:
-
   slackNotification:
     name: Notify Slack
     runs-on: ubuntu-latest
