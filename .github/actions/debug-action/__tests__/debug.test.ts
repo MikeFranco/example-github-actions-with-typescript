@@ -17,6 +17,8 @@ beforeEach(() => {
       name: 'mona',
     },
   } as WebhookPayload;
+
+  console.log('%c⧭', 'color: #f2ceb6', 'para el test');
 });
 
 afterEach(() => {
