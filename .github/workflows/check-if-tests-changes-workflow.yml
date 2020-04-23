@@ -22,8 +22,8 @@ jobs:
       env:
         SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
         SLACK_CHANNEL: general
-        SLACK_COLOR: 'red'
-        SLACK_MESSAGE: 'Te andamos checando :eyes:, no borres los tests :inexpresive:'
+        SLACK_COLOR: '#F20606'
+        SLACK_MESSAGE: 'Te andamos checando :eyes:, no hagas cambios en los tests :expresionless:'
         SLACK_USERNAME: Mike's bot
         SLACK_TITLE: Tests has changed
         SLACK_ICON: https://avatars3.githubusercontent.com/u/39423201?s=48&v=4
