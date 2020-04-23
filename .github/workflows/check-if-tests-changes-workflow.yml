@@ -15,9 +15,9 @@ jobs:
       - run: git status
   slackNotification:
     name: Notify Slack
+    if: failure()
     runs-on: ubuntu-latest
     steps:
-      if: failure()
     - uses: actions/checkout@v2
     - name: Notify Slack
       uses: drilonrecica/action-slack-notify@0.0.3

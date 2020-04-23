@@ -2,7 +2,7 @@ name: Notify Slack Demo
 on:
   push:
     branches:
-      - develop
+      - master
 
 jobs:
   slackNotification:
