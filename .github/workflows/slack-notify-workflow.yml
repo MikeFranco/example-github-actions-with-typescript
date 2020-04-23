@@ -9,7 +9,7 @@ jobs:
     name: checkTests
     runs-on: ubunt-latest
     steps:
-  #Solo hará este job si el job(checar que los tests no se hayan modificado) job.status == 'failure'
+
   slackNotification:
     name: Notify Slack
     runs-on: ubuntu-latest
@@ -21,7 +21,7 @@ jobs:
         SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
         SLACK_CHANNEL: general
         SLACK_COLOR: '#000066'
-        SLACK_MESSAGE: 'Te andamos checando :eyes:, no borres los tests :inexpresive:'
+        SLACK_MESSAGE: 'Que onda, se hizo un push a master :rocket:'
         SLACK_USERNAME: Mike's bot
-        SLACK_TITLE: Post Title
+        SLACK_TITLE: Push to master
         SLACK_ICON: https://avatars3.githubusercontent.com/u/39423201?s=48&v=4

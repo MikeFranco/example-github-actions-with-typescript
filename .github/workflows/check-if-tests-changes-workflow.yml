@@ -1,0 +1,34 @@
+name: Check Tests Didnt Change
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - '__tests__/*'
+
+jobs:
+  checkTests:
+    name: checkTests
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo Este chato cambio los tests
+      - run: git status
+  slackNotification:
+    name: Notify Slack
+    runs-on: ubuntu-latest
+    steps:
+      if: failure()
+    - uses: actions/checkout@v2
+    - name: Notify Slack
+      uses: drilonrecica/action-slack-notify@0.0.3
+      env:
+        SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+        SLACK_CHANNEL: general
+        SLACK_COLOR: 'red'
+        SLACK_MESSAGE: 'Te andamos checando :eyes:, no borres los tests :inexpresive:'
+        SLACK_USERNAME: Mike's bot
+        SLACK_TITLE: Tests has changed
+        SLACK_ICON: https://avatars3.githubusercontent.com/u/39423201?s=48&v=4
+
+
+

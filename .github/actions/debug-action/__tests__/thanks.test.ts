@@ -1,7 +1,7 @@
 import * as github from '@actions/github';
 import { WebhookPayload } from '@actions/github/lib/interfaces';
 import nock from 'nock';
-import run from '../../thanks'; //Estaba ../
+import run from '../../thanks-action/thanks'; //Estaba ../
 
 beforeEach(() => {
   jest.resetModules();

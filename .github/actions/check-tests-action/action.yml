@@ -1,0 +1,6 @@
+name: 'check-tests-action'
+description: 'Says if tests dir change'
+author: 'Mike Franco'
+runs:
+  using: 'node12'
+  main: './check-tests.ts'
