@@ -16,7 +16,7 @@ jobs:
         SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK}}
         SLACK_CHANNEL: productdevelopment
         SLACK_COLOR: '#000066'
-        SLACK_MESSAGE: 'Prueba GitHubAction :robot_face:, ignorar el mensaje :smile:'
-        SLACK_USERNAME: "Mike's bot :robot_face:"
+        SLACK_MESSAGE: 'Prueba GitHubAction :robot_face: \n PD: ignorar el mensaje :smile:'
+        SLACK_USERNAME: Mike's bot
         SLACK_TITLE: Post Title
         SLACK_ICON: https://avatars3.githubusercontent.com/u/39423201?s=48&v=4
