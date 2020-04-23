@@ -1,6 +1,8 @@
-on: [push]
-  branches: master
 name: Notify Slack Demo
+on:
+  push:
+    branches:
+      - master
 
 jobs:
   slackNotification:
