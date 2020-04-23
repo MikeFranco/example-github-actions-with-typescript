@@ -11,7 +11,12 @@ jobs:
     name: check Tests
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 1
       - run: echo Este chato cambio los tests
+      - run: git status
+      - run: git log --graph
   slackNotification:
     name: Notify Slack
     runs-on: ubuntu-latest
