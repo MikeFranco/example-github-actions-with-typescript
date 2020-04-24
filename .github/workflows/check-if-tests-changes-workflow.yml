@@ -20,9 +20,7 @@ jobs:
           git config user.email 'mfranco_98@yahoo.com'
           git pull origin master
           git reset --hard HEAD^
-          git add -A
-          git commit -m "Se cambiaron los tests, regresando al commit anterior"
-          git push --force origin master
+          git push origin master -f
   slackNotification:
     name: Notify Slack
     runs-on: ubuntu-latest
