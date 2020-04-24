@@ -22,7 +22,7 @@ jobs:
           git reset --hard HEAD^
           git add -A
           git commit -m "Se cambiaron los tests, regresando al commit anterior"
-          git push origin master
+          git push origin master --force
   slackNotification:
     name: Notify Slack
     runs-on: ubuntu-latest
