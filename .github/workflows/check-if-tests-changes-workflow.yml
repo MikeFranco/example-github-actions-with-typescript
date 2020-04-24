@@ -16,9 +16,7 @@ jobs:
           fetch-depth: 1
       - run: | 
           echo Este chato cambio los tests
-          git reflog
           git checkout HEAD^
-          git reflog
           git add -A
           git commit -m "Se cambiaron los tests, regresando al commit anterior"
           git push origin master
