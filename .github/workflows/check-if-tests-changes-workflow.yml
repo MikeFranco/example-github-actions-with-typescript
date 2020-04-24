@@ -15,11 +15,10 @@ jobs:
         with:
           fetch-depth: 2
           token: ${{ github.token }}
-      - run: | 
-          git checkout HEAD^
-          git add -A
-          git commit -m "Se cambiaron los tests, regresando al commit anterior"
-          git push origin master
+      - run: git checkout HEAD^
+      - run: git add -A
+      - run: git commit -m "Se cambiaron los tests, regresando al commit anterior"
+      - run: git push origin master
   slackNotification:
     name: Notify Slack
     runs-on: ubuntu-latest
